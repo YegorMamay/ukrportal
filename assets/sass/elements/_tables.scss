@@ -1,0 +1,24 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+
+tr > th:first-child,
+tr > td:first-child {
+    font-weight: 600;
+    text-align: left;
+}
+
+tbody > tr:first-child th {
+    font-weight: 600;
+}
+
+table, thead, tfoot, tbody, tr, th, td {
+    border: 1px solid $tableBorderColor;
+    padding: 5px;
+}
+
+td {
+    vertical-align: middle;
+}

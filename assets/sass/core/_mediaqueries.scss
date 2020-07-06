@@ -1,0 +1,24 @@
+  $mobile: "(max-width: 576px)"; //xs
+    $tablet: "(max-width: 769px)"; //sm
+   $laptop: "(max-width: 1025px)"; //md
+$desktop: "(max-width: 1201px)"; //lg
+  $screen: "(max-width: 1367px)"; //xl
+
+//@media #{$mobile} {} //xs > 574
+//@media #{$tablet} {} //sm - 767
+//@media #{$laptop} {} //md - 1023
+//@media #{$desktop} {} //lg - 1999
+//@media #{$screen} {} //xl 1365
+
+
+$mobile-min: "(min-width: 575px)"; //xs
+$tablet-min: "(min-width: 768px)"; //sm
+$laptop-min: "(min-width: 1024px)"; //md
+$desktop-min: "(min-width: 1200px)"; //lg
+$screen-min: "(min-width: 1366px)"; //xl
+
+//@media #{$mobile-min} {} //xs 575
+//@media #{$tablet-min} {} //sm - 768
+//@media #{$laptop-min} {} //md - 1024
+//@media #{$desktop-min} {} //lg - 1200
+//@media #{$screen-min} {} //xl 1366 
