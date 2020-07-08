@@ -347,27 +347,27 @@ if (!function_exists('bw_advert_shortcode')) {
                 $query->the_post();
 
                 $thumbnail = has_post_thumbnail() ? sprintf(
-                    '<figure class="%s-preview"><a href="%s">%s</a></figure>',
+                    '<div class="%s-preview"><a href="%s">%s</a></div>',
                     $basic_class,
                     get_the_permalink(),
-                    get_the_post_thumbnail(null, 'medium', ['class' => $basic_class . '-thumbnail'])
+                    get_the_post_thumbnail(null, 'large', ['class' => $basic_class . '-thumbnail'])
                 ) : '';
 
                 $headline = sprintf(
-                    '<h3 class="%s-headline"><a href="%s">%s</a></h3>',
+                    '<div class="%s-headline"><a href="%s">%s</a></div>',
                     $basic_class,
                     get_the_permalink(),
                     get_the_title()
                 );
 
-                $excerpt = sprintf('<div class="%s-excerpt">%s</div>', $basic_class, get_the_excerpt());
+//                $excerpt = sprintf('<div class="%s-excerpt">%s</div>', $basic_class, get_the_excerpt());
 
-                $btn = sprintf(
-                    '<div class="text-right"><a class="btn btn-secondary btn-sm %s-link" href="%s">%s</a></div>',
-                    $basic_class,
-                    get_the_permalink(),
-                    __('Continue reading', 'brainworks')
-                );
+//                $btn = sprintf(
+//                    '<div class="text-right"><a class="btn btn-secondary btn-sm %s-link" href="%s">%s</a></div>',
+//                    $basic_class,
+//                    get_the_permalink(),
+//                    __('Continue reading', 'brainworks')
+//                );
 
                 $box = sprintf(
                     '<div class="%s-box">%s <div class="%s-inner">%s %s %s</div></div>',

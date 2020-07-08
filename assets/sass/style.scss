@@ -110,7 +110,13 @@ body {
     position: relative;
     overflow-x: hidden;
     min-height: 100%;
-    padding-top: 80px;
+    padding-top: 60px;
+}
+
+@media screen and (min-width: 1201px) {
+    .wrapper {
+        padding-top: 0;
+    }
 }
 
 b,

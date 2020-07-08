@@ -31,76 +31,95 @@
 }
 
 
-//Lifecell
-.phone-number[href^="tel:+38063"]:before,
-.phone-number[href^="tel:+38073"]:before,
-.phone-number[href^="tel:+38093"]:before {
-  content: '';
-  display: inline-block;
-  vertical-align: baseline;
-  width: 15px;
-  height: 15px;
-  margin-right: 3px;
-  margin-bottom: -1px;
-  background-image: url("/wp-content/themes/brainworks-master/assets/img/life.svg");
-  background-repeat: no-repeat;
-}
-
-//Vodafone
-.phone-number[href^="tel:+38050"]:before,
-.phone-number[href^="tel:+38066"]:before,
-.phone-number[href^="tel:+38095"]:before,
-.phone-number[href^="tel:+38099"]:before {
-  content: '';
-  display: inline-block;
-  vertical-align: baseline;
-  width: 15px;
-  height: 15px;
-  margin-right: 3px;
-  margin-bottom: -1px;
-  background-image: url("/wp-content/themes/brainworks-master/assets/img/vodafone.svg");
-  background-repeat: no-repeat;
-}
-
-//kyivstar
-.phone-number[href^="tel:+38067"]:before,
-.phone-number[href^="tel:+38068"]:before,
-.phone-number[href^="tel:+38096"]:before,
-.phone-number[href^="tel:+38097"]:before,
-.phone-number[href^="tel:+38098"]:before {
-  content: '';
-  display: inline-block;
-  vertical-align: baseline;
-  width: 15px;
-  height: 15px;
-  margin-right: 3px;
-  margin-bottom: -1px;
-  background-image: url("/wp-content/themes/brainworks-master/assets/img/kyivstar.svg");
-  background-repeat: no-repeat;
-}
+////Lifecell
+//.phone-number[href^="tel:+38063"]:before,
+//.phone-number[href^="tel:+38073"]:before,
+//.phone-number[href^="tel:+38093"]:before {
+//  content: '';
+//  display: inline-block;
+//  vertical-align: baseline;
+//  width: 15px;
+//  height: 15px;
+//  margin-right: 3px;
+//  margin-bottom: -1px;
+//  background-image: url("/wp-content/themes/brainworks-master/assets/img/life.svg");
+//  background-repeat: no-repeat;
+//}
+//
+////Vodafone
+//.phone-number[href^="tel:+38050"]:before,
+//.phone-number[href^="tel:+38066"]:before,
+//.phone-number[href^="tel:+38095"]:before,
+//.phone-number[href^="tel:+38099"]:before {
+//  content: '';
+//  display: inline-block;
+//  vertical-align: baseline;
+//  width: 15px;
+//  height: 15px;
+//  margin-right: 3px;
+//  margin-bottom: -1px;
+//  background-image: url("/wp-content/themes/brainworks-master/assets/img/vodafone.svg");
+//  background-repeat: no-repeat;
+//}
+//
+////kyivstar
+//.phone-number[href^="tel:+38067"]:before,
+//.phone-number[href^="tel:+38068"]:before,
+//.phone-number[href^="tel:+38096"]:before,
+//.phone-number[href^="tel:+38097"]:before,
+//.phone-number[href^="tel:+38098"]:before {
+//  content: '';
+//  display: inline-block;
+//  vertical-align: baseline;
+//  width: 15px;
+//  height: 15px;
+//  margin-right: 3px;
+//  margin-bottom: -1px;
+//  background-image: url("/wp-content/themes/brainworks-master/assets/img/kyivstar.svg");
+//  background-repeat: no-repeat;
+//}
 
 .social {
   @extend %reset-list;
-
-  &,
-  &-item {
-    display: inline-block;
-    vertical-align: middle;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 
   &-item {
-    margin: 0 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: $social_bg_color;
+    margin: 0 2px;
+    @extend %smooth_animation;
+
+    &:hover, &:active, &:focus {
+      @extend %smooth_animation;
+      background: lighten($social_bg_color, 8%);
+
+      & .social-link {
+        @extend %smooth_animation;
+        color: $themeColorThree;
+      }
+    }
   }
 
   &-link {
-    display: block;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
-    font-size: 24px;
-    color: $iconColor;
+    font-size: 17px;
+    padding: 0 15px;
+    height: 45px;
+    color: $primary_color_two;
+    @extend %smooth_animation;
 
     &:hover, &:active, &:focus {
-      color: $iconColorActive;
+      color: $themeColorThree;
     }
   }
 }

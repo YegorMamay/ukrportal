@@ -89,7 +89,7 @@
 <?php wp_body_open(); ?>
 <div class="wrapper js-container"><!--Do not delete!-->
 
-    <header class="page-header fixed-to-top">
+    <header class="header">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
@@ -122,6 +122,13 @@
                                 )); ?>
                             </nav>
                         <?php } ?>
+                        <div class="woo-cart woo-cart-popup-wrapper">
+                            <?php if ( class_exists( 'WooCommerce' ) ) { woocommerce_cart(); woocommerce_cart_popup(); } ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3 col-lg-3">
+                    <div class="header__container">
                         <?php if (has_nav_menu('language-switcher')) { ?>
                             <nav class="nav js-menu">
                                 <button type="button" tabindex="0"
@@ -137,15 +144,25 @@
                                 )); ?>
                             </nav>
                         <?php } ?>
-                        <div class="woo-cart woo-cart-popup-wrapper">
-                            <?php if ( class_exists( 'WooCommerce' ) ) { woocommerce_cart(); woocommerce_cart_popup(); } ?>
-                        </div>
+                        <?php echo do_shortcode('[bw-social]'); ?>
                     </div>
                 </div>
-                <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
-                    <button type="button" class="btn btn-secondary btn-block <?php the_lang_class('js-call-back'); ?>">
-                        <?php _e('Call back', 'brainworks'); ?>
-                    </button>
+                <div class="col-12">
+                    <?php if (has_nav_menu('second-menu')) { ?>
+                        <nav id="second-menu" class="nav js-menu">
+                            <button type="button" tabindex="0"
+                                    class="menu-item-close menu-close js-menu-close"></button>
+                            <?php wp_nav_menu(array(
+                                'theme_location' => 'second-menu',
+                                'container' => false,
+                                'menu_class' => 'menu-container',
+                                'menu_id' => '',
+                                'fallback_cb' => 'wp_page_menu',
+                                'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                                'depth' => 3
+                            )); ?>
+                        </nav>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -153,7 +170,6 @@
 
     <!-- Mobile menu start-->
     <div class="nav-mobile-header">
-        <div class="social-mob"><?php echo do_shortcode('[bw-social]'); ?></div>
         <div class="logo"><?php get_default_logo_link(); ?></div>
         <button class="hamburger js-hamburger" type="button" tabindex="0">
         <span class="hamburger-box">
@@ -186,6 +202,7 @@
                     )); ?>
                 </div>
             <?php } ?>
+            <div class="social-mob"><?php echo do_shortcode('[bw-social]'); ?></div>
             <div class="mobile-phones">
                 <?php echo do_shortcode('[bw-phone]'); ?>
             </div>

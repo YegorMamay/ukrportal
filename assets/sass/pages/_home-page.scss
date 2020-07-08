@@ -1,0 +1,52 @@
+.main-post {
+  padding: 15px 0;
+}
+
+.post-headers {
+  margin-bottom: 5px;
+
+  & a {
+    font-size: 26px;
+    line-height: normal;
+    font-weight: 500;
+    color: $themeColorOne;
+
+    &:hover, &:focus {
+      color: $themeColorTwo;
+    }
+  }
+}
+
+.post-description {
+  & p {
+    color: #868691;
+    font-size: 20px;
+  }
+}
+
+.post-caption {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  &__date {
+    color: #bebfcb;
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .front-news-list {
+    & .front-news-item {
+      flex: 0 0 25%;
+      max-width: 25%;
+
+      &:first-child {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+    }
+  }
+}

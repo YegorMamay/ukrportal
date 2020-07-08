@@ -1,20 +1,30 @@
-.page-header {
+.header {
     padding: 10px 0;
-    background-color: $headerBgColor;
+    background: $themeColorTwo;
     color: $headerFontColor;
     box-shadow: $shadow;
-}
+    margin-bottom: 70px;
 
-@media #{$desktop} {
-    .page-header {
-        display: none !important;  
+    &__container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+
+        #menu-language-switcher {
+            height: 45px;
+            background: $social_bg_color;
+
+            & .menu-item {
+                &:hover,&:focus {
+                    background: lighten($social_bg_color, 8%);
+                }
+            }
+        }
     }
 }
 
-.fixed-to-top {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 33;
+@media #{$desktop} {
+    .header {
+        display: none;
+    }
 }

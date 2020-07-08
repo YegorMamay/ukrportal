@@ -2,35 +2,42 @@
     <div class="js-ajax-posts">
         <?php while (have_posts()): the_post(); ?>
                     <article id="post_<?php the_ID() ?>" class="row">
-                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                        <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
                             <?php the_post_thumbnail('large'); ?>
                             <div class="sp-xs-3 sp-sm-0"></div>
                         </div>
-                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                                <h3><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></h3>
+                        <div class="col-12 col-sm-6 col-md-7 col-lg-7 col-xl-7">
+                                <div class="post-caption">
+                                    <span>
+                                        <?php the_category(', '); ?>
+                                    </span>
+                                    <span class="post-caption__date">
+                                         <?php echo the_time('d-m-Y'); ?>
+                                    </span>
+                                </div>
+                                <div class="post-headers"><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></div>
                                 <div class="sp-xs-1"></div>
-                                <p><?php the_excerpt(); ?></p>
+                                <div class="post-description"><?php the_excerpt(); ?></div>
                                 
-                        <h5>
-                          <em>
-                            <span class="text-muted author"><?php _e('By', 'brainworks'); echo " "; the_author() ?>,</span>
-                            <time  class="text-muted" datetime="<?php the_time('d-m-Y')?>"><?php echo get_option( 'date_format' ) ?></time>
-                          </em>
-                        </h5>
-                        <p class="text-muted">
-                            <i class="fa fa-folder-open-o"></i>&nbsp; <?php _e('Category', 'brainworks'); ?>: <?php the_category(', ') ?><br/>
-                            <i class="fa fa-comment-o"></i>&nbsp; <?php _e('Comments', 'brainworks'); ?>: <?php comments_popup_link(__('None', 'brainworks'), '1', '%'); ?>
-                        </p>
+<!--                        <h5>-->
+<!--                          <em>-->
+<!--                            <span class="text-muted author">--><?php //_e('By', 'brainworks'); echo " "; the_author() ?><!--,</span>-->
+<!--                            <time  class="text-muted" datetime="--><?php //the_time('d-m-Y')?><!--">--><?php //echo get_option( 'date_format' ) ?><!--</time>-->
+<!--                          </em>-->
+<!--                        </h5>-->
+<!--                        <p class="text-muted">-->
+<!--                            <i class="fa fa-folder-open-o"></i>&nbsp; --><?php //_e('Category', 'brainworks'); ?><!--: --><?php //the_category(', ') ?><!--<br/>-->
+<!--                            <i class="fa fa-comment-o"></i>&nbsp; --><?php //_e('Comments', 'brainworks'); ?><!--: --><?php //comments_popup_link(__('None', 'brainworks'), '1', '%'); ?>
+<!--                        </p>-->
                     
-                            <div class="sp-xs-2"></div>
-                            <a class="btn btn-secondary btn-sm"
-                               href="<?php echo get_permalink(); ?>"><?php _e('Continue reading', 'brainworks') ?> <i
-                                        class="glyphicon glyphicon-arrow-right"></i></a>
+<!--                            <div class="sp-xs-2"></div>-->
+<!--                            <a class="btn btn-secondary btn-sm"-->
+<!--                               href="--><?php //echo get_permalink(); ?><!--">--><?php //_e('Continue reading', 'brainworks') ?><!-- <i-->
+<!--                                        class="glyphicon glyphicon-arrow-right"></i></a>-->
                         </div>
                     </article>
-            <div class="sp-xs-2"></div>
-            <hr>
-            <div class="sp-xs-2"></div>
+
+            <div class="sp-xs-6"></div>
         <?php endwhile; ?>
     </div>
 

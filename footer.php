@@ -1,4 +1,5 @@
 <footer class="footer js-footer">
+    <img class="footer__line" src="/wp-content/themes/brainworks-master/assets/img/pattern.jpg" alt="line"/>
     <?php if (is_active_sidebar('footer-widget-area')) : ?>
         <div class="pre-footer">
             <div class="container">
