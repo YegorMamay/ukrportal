@@ -369,6 +369,9 @@ if (!function_exists('bw_advert_shortcode')) {
 //                    __('Continue reading', 'brainworks')
 //                );
 
+                $btn = '';
+                $excerpt = '';
+
                 $box = sprintf(
                     '<div class="%s-box">%s <div class="%s-inner">%s %s %s</div></div>',
                     $basic_class,
