@@ -15,6 +15,17 @@
         align-items: center;
         justify-content: flex-start;
         width: 100%;
+
+        & .menu-link {
+          padding-left: 3px;
+          padding-right: 3px;
+        }
+
+        .menu-item-has-children {
+          &:after {
+            right: 2px;
+          }
+        }
       }
 
     }
@@ -153,6 +164,7 @@
     visibility: hidden;
     text-align: left;
     opacity: 0;
+    box-shadow: $shadow;
 
     &-item {
       .menu-item-has-children-arrow {
@@ -240,10 +252,21 @@
       &:hover, &:focus {
         @extend %smooth_animation;
         background: $themeColorTwo;
+
         & .menu-link {
           color: $primary_color_two;
         }
+
       }
+
+      &.menu-item-has-children {
+        &:hover, &:focus {
+          &:after {
+            border-color: $primary_color_two transparent transparent transparent;
+          }
+        }
+      }
+
     }
 
     & .menu-link {
@@ -251,6 +274,17 @@
       font-size: 17px;
       font-weight: normal;
       text-transform: none;
+    }
+  }
+}
+
+#menu-second-nav {
+
+  & .menu-item-has-children {
+    &:after {
+      border-color: $themeColorOne transparent transparent transparent;
+      transform: translateY(-50%);
+      top: 50%;
     }
   }
 }
