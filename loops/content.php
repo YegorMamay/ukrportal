@@ -8,8 +8,8 @@
                         </div>
                         <div class="col-12 col-sm-6 col-md-7 col-lg-7 col-xl-7">
                                 <div class="post-caption">
-                                    <span>
-                                        <?php the_category(', '); ?>
+                                    <span class="post-caption__item">
+                                        <?php the_category(' '); ?>
                                     </span>
                                     <span class="post-caption__date">
                                          <?php echo the_time('d-m-Y'); ?>

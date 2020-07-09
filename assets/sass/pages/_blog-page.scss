@@ -8,18 +8,17 @@
         }
     }
 
-    &-inner {
-        background: transparent;
-        padding: 15px;
-        position: absolute;
+    &-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         width: 100%;
-        left: 0;
-        bottom: 0;
-        z-index: 1;
+        margin-bottom: 20px;
     }
 
-    &-item {
-        margin-bottom: 20px;
+    &-datetime {
+        color: $primary_color_two;
+        font-size: 16px;
     }
 
     &-headline {
@@ -27,7 +26,7 @@
 
         & a {
             font-size: 26px;
-            color: $primary_color_two;
+            color: $themeColorOne;
             font-weight: 500;
             &:hover, &:focus {
                 color: $themeColorThree;

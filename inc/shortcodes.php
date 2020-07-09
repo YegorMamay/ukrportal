@@ -316,8 +316,12 @@ if (!function_exists('bw_advert_shortcode')) {
             'count' => 3,
             'class' => 'front-news',
             'category' => null,
+            'display_category' => false,
+            'display_datetime' => false,
+            'array_index' => false,
         ], $atts);
 
+        $posts = [];
         $output = '';
 
         $args = [
@@ -347,54 +351,83 @@ if (!function_exists('bw_advert_shortcode')) {
                 $query->the_post();
 
                 $thumbnail = has_post_thumbnail() ? sprintf(
-                    '<div class="%s-preview"><a href="%s">%s</a></div>',
+                    '<figure class="%s-preview"><a href="%s">%s</a></figure>',
                     $basic_class,
                     get_the_permalink(),
-                    get_the_post_thumbnail(null, 'large', ['class' => $basic_class . '-thumbnail'])
+                    get_the_post_thumbnail(null, 'medium', ['class' => $basic_class . '-thumbnail'])
                 ) : '';
 
+                $category = '';
+                $datetime = '';
+
+                if ($atts['display_datetime']) {
+                    $datetime = sprintf(
+                        '<time class="%s-datetime" datetime="%s">%s</time>',
+                        $basic_class,
+                        get_the_date('c'),
+                        get_the_date()
+                    );
+                }
+
+                if ($atts['display_category']) {
+                    $category = sprintf(
+                        '<div class="%s-category post-caption__item">%s</div>',
+                        $basic_class,
+                        get_the_category_list(' ')
+                    );
+                }
+
+                $meta = sprintf(
+                    '<div class="%s-meta">%s %s</div>',
+                    $basic_class,
+                    $category,
+                    $datetime
+                );
+
                 $headline = sprintf(
-                    '<div class="%s-headline"><a href="%s">%s</a></div>',
+                    '<h3 class="%s-headline"><a href="%s">%s</a></h3>',
                     $basic_class,
                     get_the_permalink(),
                     get_the_title()
                 );
 
-//                $excerpt = sprintf('<div class="%s-excerpt">%s</div>', $basic_class, get_the_excerpt());
+                $excerpt = sprintf('<div class="%s-excerpt">%s</div>', $basic_class, get_the_excerpt());
 
-//                $btn = sprintf(
-//                    '<div class="text-right"><a class="btn btn-secondary btn-sm %s-link" href="%s">%s</a></div>',
-//                    $basic_class,
-//                    get_the_permalink(),
-//                    __('Continue reading', 'brainworks')
-//                );
-
-                $btn = '';
-                $excerpt = '';
+                $btn = sprintf(
+                    '<div class="text-right"><a class="btn btn-secondary btn-sm %s-link" href="%s">%s</a></div>',
+                    $basic_class,
+                    get_the_permalink(),
+                    __('Continue reading', 'brainworks')
+                );
 
                 $box = sprintf(
-                    '<div class="%s-box">%s <div class="%s-inner">%s %s %s</div></div>',
+                    '<div class="%s-box">%s <div class="%s-inner">%s %s</div></div>',
                     $basic_class,
                     $thumbnail,
                     $basic_class,
-                    $headline,
-                    $excerpt,
-                    $btn
+                    $meta,
+                    $headline
                 );
 
                 $item = sprintf(
                     '<section id="post-%s" class="%s">%s</section>',
                     get_the_ID(),
-                    join(' ', get_post_class(['col-sm-6 col-md-4', $basic_class . '-item'])),
+                    join(' ', get_post_class(['main-post__item', $basic_class . '-item'])),
                     $box
                 );
+
+                $posts[] = $item;
 
                 $items .= $item;
             }
 
             wp_reset_postdata();
 
-            $output = sprintf('<div class="row %s-list">%s</div>', $basic_class, $items);
+            $output = sprintf('<div class="%s-list">%s</div>', $basic_class, $items);
+        }
+
+        if ($atts['array_index'] && array_key_exists($atts['array_index'], $posts)) {
+            return $posts[$atts['array_index']];
         }
 
         return $output;

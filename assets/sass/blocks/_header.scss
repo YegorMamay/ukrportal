@@ -1,9 +1,15 @@
+.blog {
+    & .header {
+        margin-bottom: 70px;
+    }
+}
+
 .header {
     padding: 10px 0;
     background: $themeColorTwo;
     color: $headerFontColor;
     box-shadow: $shadow;
-    margin-bottom: 70px;
+    margin-bottom: 40px;
 
     &__container {
         display: flex;
