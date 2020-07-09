@@ -241,8 +241,8 @@
     width: 100%;
 
     & .menu-item {
-      background: $light_bg_color;
-      width: calc(100% / 6);
+      background: transparent;
+      width: 16.6666667%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -282,9 +282,10 @@
 
   & .menu-item-has-children {
     &:after {
-      border-color: $themeColorOne transparent transparent transparent;
-      transform: translateY(-50%);
-      top: 50%;
+      //border-color: $themeColorOne transparent transparent transparent;
+      //transform: translateY(-50%);
+      //top: 50%;
+      content: none;
     }
   }
 }
