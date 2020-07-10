@@ -124,7 +124,7 @@ if( function_exists('acf_add_options_page') ) {
         'redirect'		=> false
     ));
 
-    foreach (['ru', 'uk', 'sk'] as $lang) {
+    foreach (['uk', 'en', 'sk'] as $lang) {
 
         acf_add_options_sub_page([
             'page_title' => "Баннер $lang",
