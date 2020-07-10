@@ -16,9 +16,11 @@
             </div>
         </div>
     </div>
-    <h1 class="main-title h2"><?php echo pll_e('news-title'); ?></h1>
     <div class="row">
       <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-9">
+          <div class="title-wrapper">
+              <h1 class="news-title h2"><?php echo pll_e('news-title') ?></h1>
+          </div>
           <div class="sp-xs-4"></div>
             <?php get_template_part('loops/content', get_post_format()); ?>
         </div>
