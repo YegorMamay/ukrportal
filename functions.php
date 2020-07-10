@@ -112,3 +112,29 @@ function translate_text($translated) {
 $translated = str_ireplace('Подытог', 'Итого', $translated);
 return $translated;
 }
+
+
+if( function_exists('acf_add_options_page') ) {
+
+    acf_add_options_page(array(
+        'page_title' 	=> 'Настройки баннера',
+        'menu_title'	=> 'Настройки баннера',
+        'menu_slug' 	=> 'theme-general-settings',
+        'capability'	=> 'edit_posts',
+        'redirect'		=> false
+    ));
+
+    foreach (['ru', 'uk', 'sk'] as $lang) {
+
+        acf_add_options_sub_page([
+            'page_title' => "Баннер $lang",
+            'menu_title' => __("Баннер $lang", 'Brainworks'),
+            'menu_slug' => "banner-${lang}",
+            'post_id' => $lang,
+            'parent' => 'theme-general-settings',
+            'capability'	=> 'edit_posts',
+            'redirect'		=> false,
+        ]);
+
+    }
+}

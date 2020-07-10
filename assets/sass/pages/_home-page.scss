@@ -248,3 +248,29 @@
     }
   }
 }
+
+.bw-banner {
+  width: 100%;
+  height: auto;
+  padding: 20px 0;
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .bw-banner {
+    padding: 3.5% 0;
+  }
+}

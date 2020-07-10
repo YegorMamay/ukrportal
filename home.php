@@ -16,6 +16,15 @@
             </div>
         </div>
     </div>
+    <div class="bw-banner">
+        <?php
+        $banner_link = get_field('banner_link' , pll_current_language('slug'));
+        $banner_image = get_field('banner_image' , pll_current_language('slug'));
+        ?>
+        <a class="bw-banner__image" href="<?php echo $banner_link; ?>">
+            <img src="<?php echo $banner_image; ?>" class="bw-banner__image" alt="banner">
+        </a>
+    </div>
     <div class="row">
       <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-9">
           <div class="title-wrapper">

@@ -11835,6 +11835,41 @@ select {
   border-top: 3px solid #e75c63;
 }
 
+.bw-banner {
+  width: 100%;
+  height: auto;
+  padding: 20px 0;
+}
+
+.bw-banner__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.bw-banner__image {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 992px) {
+  .bw-banner {
+    padding: 3.5% 0;
+  }
+}
+
 ol.commentlist .comment-body {
   margin-bottom: 25px;
 }
