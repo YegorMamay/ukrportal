@@ -351,7 +351,7 @@ if (!function_exists('bw_advert_shortcode')) {
                 $query->the_post();
 
                 $thumbnail = has_post_thumbnail() ? sprintf(
-                    '<figure class="%s-preview"><a href="%s">%s</a></figure>',
+                    '<div class="%s-preview"><a href="%s">%s</a></div>',
                     $basic_class,
                     get_the_permalink(),
                     get_the_post_thumbnail(null, 'medium', ['class' => $basic_class . '-thumbnail'])

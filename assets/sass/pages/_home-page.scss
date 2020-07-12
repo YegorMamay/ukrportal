@@ -61,6 +61,31 @@
       }
     }
   }
+
+  & .front-news-box {
+    &:hover {
+      & .front-news-preview {
+        & a {
+          & img {
+            transform: scale(1.15);
+            transition: all 0.2s ease-out;
+          }
+        }
+      }
+    }
+  }
+
+  & .front-news-box {
+    & .front-news-preview {
+      & a {
+        & img {
+          transform: none;
+          transition: all 0.2s ease-out;
+        }
+      }
+    }
+
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -68,38 +93,66 @@
     padding: 15px 0;
     display: flex;
     justify-content: space-between;
-    margin: 0 -5px;
+    margin: 0 -4px;
     width: auto;
     max-width: none;
 
     &__item {
-      padding: 0 5px;
+      padding: 0 4px;
     }
 
     &__column {
       width: 50%;
       margin-bottom: 0;
+
+
+      & .front-news-box {
+        & .front-news-preview {
+          & a {
+            padding-bottom: 79.2393027%;
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+
+            & img {
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              width: 100%;
+              max-width: 100%;
+              height: 100%;
+              max-height: 100%;
+              margin: auto;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+
     }
 
     &__row {
       width: 50%;
       display: flex;
       flex-wrap: wrap;
-      justify-content: flex-start;
+      justify-content: center;
+      align-content: space-between;
     }
 
     &__container {
-      margin-bottom: 5px;
+      margin-bottom: 0;
       width: 50%;
 
       &:first-child {
         width: 100%;
-        margin-bottom: 8px;
+        padding-bottom: 8px;
 
         & .front-news-box {
           & .front-news-preview {
             & a {
-              padding-bottom: 30%;
+              padding-bottom: calc(39.8089172% - 4px);
               position: relative;
               width: 100%;
               overflow: hidden;
@@ -110,7 +163,36 @@
                 bottom: 0;
                 left: 0;
                 right: 0;
+                width: 100%;
                 max-width: 100%;
+                height: 100%;
+                max-height: 100%;
+                margin: auto;
+                object-fit: cover;
+              }
+            }
+          }
+        }
+      }
+
+      &:nth-child(2), &:nth-child(3) {
+        & .front-news-box {
+          & .front-news-preview {
+            & a {
+              padding-bottom: calc(80.6451613% - 10px);
+              position: relative;
+              width: 100%;
+              overflow: hidden;
+
+              & img {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                max-width: 100%;
+                height: 100%;
                 max-height: 100%;
                 margin: auto;
                 object-fit: cover;
