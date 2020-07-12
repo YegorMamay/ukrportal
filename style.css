@@ -11647,6 +11647,18 @@ select {
   z-index: 1;
 }
 
+.main-post .front-news-inner:before {
+  content: '';
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, rgba(255, 255, 255, 0.05)), color-stop(75%, rgba(0, 0, 0, 0.75)));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1%, rgba(0, 0, 0, 0.75) 75%);
+  width: 100%;
+  height: calc(100% + 25px);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
 .main-post .front-news-headline a {
   color: #fff;
 }
@@ -11870,6 +11882,79 @@ select {
   }
 }
 
+#mobile-nav {
+  position: static;
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
+  -webkit-transform: none;
+  transform: none;
+  z-index: auto;
+  display: block;
+  width: auto;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 15px;
+}
+
+#mobile-nav .menu-container {
+  padding: 10px;
+  background: #f5f7fa;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+#mobile-nav .menu-container .menu-link {
+  color: #3d4249;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 500;
+  display: inline-block;
+  width: 100%;
+  padding: 5px 0;
+}
+
+#mobile-nav .menu-container .menu-link:hover, #mobile-nav .menu-container .menu-link:focus {
+  background: transparent;
+  color: #2d5ca6;
+}
+
+#mobile-nav .menu-container .menu-item {
+  background: transparent;
+  width: 100%;
+  text-align: center;
+}
+
+#mobile-nav .menu-container .menu-item-has-children-arrow {
+  display: none;
+}
+
+#mobile-nav .menu-container .menu-item-has-children-arrow:before {
+  content: none;
+}
+
+#mobile-nav .menu-container .menu-item:hover, #mobile-nav .menu-container .menu-item:focus {
+  background: transparent;
+}
+
+#mobile-nav .menu-container .menu-item:hover .menu-link, #mobile-nav .menu-container .menu-item:focus .menu-link {
+  color: #2d5ca6;
+}
+
+@media screen and (min-width: 365px) {
+  #mobile-nav .menu-container .menu-item {
+    width: 50%;
+  }
+}
+
 ol.commentlist .comment-body {
   margin-bottom: 25px;
 }
@@ -11901,7 +11986,7 @@ ol.commentlist .comment-body {
   -ms-flex-pack: justify;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .front-news-datetime {
@@ -12552,7 +12637,7 @@ textarea {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 10px auto;
+  margin: 10px auto 30px;
   padding: 0;
   list-style: none;
 }

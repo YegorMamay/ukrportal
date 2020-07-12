@@ -2,7 +2,7 @@
     &-box {
         @include smooth_animation;
         position: relative;
-        border-top: 3px solid $ligth_border_color;
+        border-top: 3px solid $light_border_color;
     
         &:hover {
             box-shadow: none;
@@ -14,7 +14,7 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
 
     &-datetime {
