@@ -405,16 +405,38 @@
       }
     }
 
+    & .sub-menu-link {
+      color: $themeColorOne;
+      background: transparent;
+      font-size: 13px;
+      font-weight: 500;
+      display: inline-block;
+      width: 100%;
+      padding: 5px 0;
+
+      &:hover, &:focus {
+        background: transparent;
+        color: $themeColorTwo;
+      }
+    }
+
+
     & .menu-item {
       background: transparent;
       width: 100%;
       text-align: center;
+      padding-left: 26px;
+      padding-right: 26px;
 
       &-has-children-arrow {
-        display: none;
-
+        padding: 3px;
         &:before {
-          content: none;
+          border-right: 1px solid $themeColorOne;
+          border-bottom: 1px solid $themeColorOne;
+          display: block;
+          width: 8px;
+          height: 8px;
+          padding: 5px;
         }
       }
 
@@ -427,15 +449,5 @@
       }
     }
 
-  }
-}
-
-@media screen and (min-width: 365px) {
-  #mobile-nav {
-    & .menu-container {
-      & .menu-item {
-        width: 50%;
-      }
-    }
   }
 }

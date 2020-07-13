@@ -11649,8 +11649,8 @@ select {
 
 .main-post .front-news-inner:before {
   content: '';
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, rgba(0, 0, 0, 0.1)), color-stop(70%, rgba(0, 0, 0, 0.8)));
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 5%, rgba(0, 0, 0, 0.8) 70%);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(25%, rgba(0, 0, 0, 0.15)), color-stop(40%, rgba(0, 0, 0, 0.3)), color-stop(50%, rgba(0, 0, 0, 0.45)), color-stop(70%, rgba(0, 0, 0, 0.6)));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 25%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.6) 70%);
   width: 100%;
   height: calc(100% + 25px);
   position: absolute;
@@ -11985,18 +11985,40 @@ select {
   color: #2d5ca6;
 }
 
+#mobile-nav .menu-container .sub-menu-link {
+  color: #3d4249;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 500;
+  display: inline-block;
+  width: 100%;
+  padding: 5px 0;
+}
+
+#mobile-nav .menu-container .sub-menu-link:hover, #mobile-nav .menu-container .sub-menu-link:focus {
+  background: transparent;
+  color: #2d5ca6;
+}
+
 #mobile-nav .menu-container .menu-item {
   background: transparent;
   width: 100%;
   text-align: center;
+  padding-left: 26px;
+  padding-right: 26px;
 }
 
 #mobile-nav .menu-container .menu-item-has-children-arrow {
-  display: none;
+  padding: 3px;
 }
 
 #mobile-nav .menu-container .menu-item-has-children-arrow:before {
-  content: none;
+  border-right: 1px solid #3d4249;
+  border-bottom: 1px solid #3d4249;
+  display: block;
+  width: 8px;
+  height: 8px;
+  padding: 5px;
 }
 
 #mobile-nav .menu-container .menu-item:hover, #mobile-nav .menu-container .menu-item:focus {
@@ -12005,12 +12027,6 @@ select {
 
 #mobile-nav .menu-container .menu-item:hover .menu-link, #mobile-nav .menu-container .menu-item:focus .menu-link {
   color: #2d5ca6;
-}
-
-@media screen and (min-width: 365px) {
-  #mobile-nav .menu-container .menu-item {
-    width: 50%;
-  }
 }
 
 ol.commentlist .comment-body {
