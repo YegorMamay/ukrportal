@@ -95,7 +95,7 @@
                 <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
                     <div class="logo">
                         <?php get_default_logo_link([
-                            'name' => 'logo.svg',
+                            'name' => 'logo-white.svg',
                             'options' => [
                                 'class' => 'logo-img',
                                 'width' => 100,
@@ -170,7 +170,17 @@
 
     <!-- Mobile menu start-->
     <div class="nav-mobile-header">
-        <div class="logo"><?php get_default_logo_link(); ?></div>
+        <div class="logo">
+            <?php get_default_logo_link([
+                'name' => 'logo-white.svg',
+                'options' => [
+                    'class' => 'logo-img',
+                    'width' => 100,
+                    'height' => 50,
+                ],
+            ])
+            ?>
+        </div>
         <button class="hamburger js-hamburger" type="button" tabindex="0">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
