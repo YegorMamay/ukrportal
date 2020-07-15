@@ -11649,8 +11649,8 @@ select {
 
 .main-post .front-news-inner:before {
   content: '';
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(25%, rgba(0, 0, 0, 0.15)), color-stop(40%, rgba(0, 0, 0, 0.3)), color-stop(50%, rgba(0, 0, 0, 0.45)), color-stop(70%, rgba(0, 0, 0, 0.6)));
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 25%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.6) 70%);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(0, 0, 0, 0.85)));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.85) 100%);
   width: 100%;
   height: calc(100% + 25px);
   position: absolute;
@@ -11665,20 +11665,6 @@ select {
 
 .main-post .front-news-headline a:hover, .main-post .front-news-headline a:focus {
   color: #2d5ca6;
-}
-
-.main-post .front-news-box:hover .front-news-preview a img {
-  -webkit-transform: scale(1.15);
-  transform: scale(1.15);
-  -webkit-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
-}
-
-.main-post .front-news-box .front-news-preview a img {
-  -webkit-transform: none;
-  transform: none;
-  -webkit-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
 }
 
 @media screen and (min-width: 992px) {
@@ -13508,7 +13494,7 @@ fieldset:disabled a.btn {
 }
 
 .header {
-  padding: 15px 0 10px;
+  padding-bottom: 20px;
   background: #2d5ca6;
   color: #fff;
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -13540,6 +13526,15 @@ fieldset:disabled a.btn {
 @media (max-width: 1201px) {
   .header {
     display: none;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .header .logo-img {
+    width: 90px;
+  }
+  .header .row {
+    padding: 10px 0;
   }
 }
 
@@ -13749,8 +13744,6 @@ fieldset:disabled a.btn {
 #second-menu {
   background: #f5f7fa;
   width: 100%;
-  margin-bottom: -45px;
-  margin-top: 25px;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
@@ -13802,6 +13795,18 @@ fieldset:disabled a.btn {
   font-size: 17px;
   font-weight: normal;
   text-transform: none;
+}
+
+@media screen and (min-width: 1200px) {
+  #second-menu {
+    position: relative;
+    top: 15px;
+    margin-bottom: -65px;
+  }
+  #second-menu .menu-link {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
 }
 
 #menu-second-nav .menu-item-has-children:after {

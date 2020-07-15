@@ -230,8 +230,6 @@
 #second-menu {
   background: $light_bg_color;
   width: 100%;
-  margin-bottom: -45px;
-  margin-top: 25px;
   box-shadow: none;
 
   & .menu-container {
@@ -278,13 +276,25 @@
   }
 }
 
+@media screen and (min-width: 1200px) {
+  #second-menu {
+   position: relative;
+    top: 15px;
+    margin-bottom: -65px;
+
+    & .menu-link {
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+  }
+}
+
+
+
 #menu-second-nav {
 
   & .menu-item-has-children {
     &:after {
-      //border-color: $themeColorOne transparent transparent transparent;
-      //transform: translateY(-50%);
-      //top: 50%;
       content: none;
     }
   }

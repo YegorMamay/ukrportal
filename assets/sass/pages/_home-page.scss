@@ -61,31 +61,6 @@
       }
     }
   }
-
-  & .front-news-box {
-    &:hover {
-      & .front-news-preview {
-        & a {
-          & img {
-            transform: scale(1.15);
-            transition: all 0.2s ease-out;
-          }
-        }
-      }
-    }
-  }
-
-  & .front-news-box {
-    & .front-news-preview {
-      & a {
-        & img {
-          transform: none;
-          transition: all 0.2s ease-out;
-        }
-      }
-    }
-
-  }
 }
 
 @media screen and (min-width: 992px) {

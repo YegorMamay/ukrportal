@@ -1,36 +1,50 @@
 .blog {
-    & .header {
-        margin-bottom: 70px;
-    }
+  & .header {
+    margin-bottom: 70px;
+  }
 }
 
 .header {
-    padding: 15px 0 10px;
-    background: $themeColorTwo;
-    color: $headerFontColor;
-    box-shadow: $shadow;
-    margin-bottom: 40px;
+  padding-bottom: 20px;
+  background: $themeColorTwo;
+  color: $headerFontColor;
+  box-shadow: $shadow;
+  margin-bottom: 40px;
 
-    &__container {
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-end;
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
 
-        #menu-language-switcher {
-            height: 45px;
-            background: $social_bg_color;
+    #menu-language-switcher {
+      height: 45px;
+      background: $social_bg_color;
 
-            & .menu-item {
-                &:hover,&:focus {
-                    background: lighten($social_bg_color, 8%);
-                }
-            }
+      & .menu-item {
+        &:hover, &:focus {
+          background: lighten($social_bg_color, 8%);
         }
+      }
     }
+  }
 }
 
 @media #{$desktop} {
-    .header {
-        display: none;
+  .header {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .header {
+    & .logo {
+      &-img {
+        width: 90px;
+      }
     }
+
+    & .row {
+      padding: 10px 0;
+    }
+  }
 }
