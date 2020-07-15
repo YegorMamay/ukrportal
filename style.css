@@ -13508,7 +13508,7 @@ fieldset:disabled a.btn {
 }
 
 .header {
-  padding: 25px 0 10px;
+  padding: 15px 0 10px;
   background: #2d5ca6;
   color: #fff;
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -13920,8 +13920,8 @@ fieldset:disabled a.btn {
     z-index: 99;
   }
   .nav-mobile-header img {
-    max-height: 50px;
-    width: 100px;
+    height: 52px;
+    width: 52px;
   }
   .nav-mobile-header .hamburger {
     display: block;
