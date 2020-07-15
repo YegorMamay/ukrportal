@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 <div class="container">
     <div class="main-post">
+        <img class="main-post__left-image" src="/wp-content/themes/brainworks-master/assets/img/left-bg.png" alt="image">
+        <img class="main-post__right-image" src="/wp-content/themes/brainworks-master/assets/img/right-bg.png" alt="image">
         <div class="main-post__column">
             <?php echo do_shortcode('[bw-advert count=1 class=front-news display_datetime=1 display_category=1 array_index=0]'); ?>
         </div>
