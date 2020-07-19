@@ -43,6 +43,7 @@
 
     <?php if (get_theme_mod('bw_load_more_enable') && function_exists('bw_load_more')) { ?>
         <div class="text-center"><?php bw_load_more(); ?></div>
+        <div class="sp-xs-6"></div>
     <?php } else {
         if (function_exists('bw_pagination')) {
             bw_pagination();

@@ -138,3 +138,16 @@ if( function_exists('acf_add_options_page') ) {
 
     }
 }
+
+function widget_nav_args( $nav_menu_args, $nav_menu, $args, $instance) {
+
+    if( $args['id'] === 'footer-widget-area' ) {
+        return array_merge( $nav_menu_args, array(
+            'depth' => 1
+        ) );
+    }
+
+    return $nav_menu_args;
+}
+
+add_filter('widget_nav_menu_args', 'widget_nav_args', 10, 4);
