@@ -23,9 +23,9 @@
         reviews('.js-reviews');
         scrollTop('.js-scroll-top');
         wrapHighlightedElements('.highlighted');
-        if (ajax) {
-            ajaxLoadMorePosts('.js-load-more', '.js-ajax-posts');
-        }
+        // if (ajax) {
+        ajaxLoadMorePosts('.js-load-more', '.js-ajax-posts');
+        // }
         stickFooter('.js-footer', '.js-container');
         // hamburgerMenu('.js-menu', '.js-hamburger', '.js-menu-close');
         anotherHamburgerMenu('.js-menu', '.js-hamburger', '.js-menu-close');
@@ -481,6 +481,7 @@
     const ajaxLoadMorePosts = (selector, container) => {
         const btn = $(selector);
         const storage = $(container);
+        console.log(storage);
 
         if (!btn.length && !storage.length) return;
 

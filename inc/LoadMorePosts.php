@@ -27,6 +27,9 @@ if (!class_exists('LoadMorePosts')) {
         {
             $condition = is_front_page() || is_home() || is_archive();
 
+            wp_enqueue_script('brainworks-js', get_template_directory_uri() . '/assets/js/brainworks.js', ['jquery'],
+                null, true);
+
             if (get_theme_mod('bw_load_more_enable') && $condition) {
                 wp_localize_script('brainworks-js', 'jpAjax', [
                     'action' => 'load_more_posts',
@@ -93,25 +96,24 @@ if (!class_exists('LoadMorePosts')) {
                     $posts .= '
                     <div class="container-fluid">
                         <div class="row">
-                            <article id="post-' . get_the_ID() . '">
-                                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                                    <section>' . get_the_post_thumbnail(null, 'large') . '</section>
+                            <article id="post-' . get_the_ID() . '" class="row">
+                                <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                                    <div>' . get_the_post_thumbnail(null, 'large') . '</div>
+                                       <div class="sp-xs-3 sp-sm-0"></div>
                                 </div>
-                                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                                    <header>
-                                        <h3><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>
-                                        <div class="sp-xs-1 sp-sm-1 sp-md-1 sp-lg-1 sp-xl-1"></div>
-                                        <p>' . get_the_excerpt() . '</p>
-                                    </header>
-                                    <div class="sp-xs-2 sp-sm-2 sp-md-2 sp-lg-2 sp-xl-2"></div>
-                                    <a class="btn btn-secondary" href="' . get_permalink() . '">' . __('Continue reading', 'brainworks') . '<i class="glyphicon glyphicon-arrow-right"></i></a>
+                                <div class="col-12 col-sm-6 col-md-7 col-lg-7 col-xl-7">
+                                    <div class="post-caption">
+                                        <span class="post-caption__item">' . get_the_category_list(' ') . '</span>
+                                        <span class="post-caption__date">' . get_the_date('d-m-Y') . '</span>
+                                    </div>
+                                    <div class="post-headers"><a href="' . get_permalink() . '">' . get_the_title() . '</a></div>
+                                    <div class="sp-xs-1"></div>
+                                    <div class="post-description"><p>' . get_the_excerpt() . '</p></div>
                                 </div>
                             </article>
                         </div>
                     </div>
-                    <div class="sp-xs-2 sp-sm-2 sp-md-2 sp-lg-2 sp-xl-2"></div>
-                    <hr>
-                    <div class="sp-xs-2 sp-sm-2 sp-md-2 sp-lg-2 sp-xl-2"></div>
+                    <div class="sp-xs-6"></div>
                     ';
                 }
 

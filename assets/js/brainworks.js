@@ -18,9 +18,7 @@
         reviews(".js-reviews");
         scrollTop(".js-scroll-top");
         wrapHighlightedElements(".highlighted");
-        if (ajax) {
-            ajaxLoadMorePosts(".js-load-more", ".js-ajax-posts");
-        }
+        ajaxLoadMorePosts(".js-load-more", ".js-ajax-posts");
         stickFooter(".js-footer", ".js-container");
         anotherHamburgerMenu(".js-menu", ".js-hamburger", ".js-menu-close");
         buyOneClick(".one-click-ru", '[data-field-id="field11"]', "h1");
@@ -230,6 +228,7 @@
     var ajaxLoadMorePosts = function ajaxLoadMorePosts(selector, container) {
         var btn = $(selector);
         var storage = $(container);
+        console.log(storage);
         if (!btn.length && !storage.length) return;
         var data, ajaxStart;
         data = {

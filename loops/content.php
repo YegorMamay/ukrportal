@@ -18,26 +18,9 @@
                                 <div class="post-headers"><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></div>
                                 <div class="sp-xs-1"></div>
                                 <div class="post-description"><?php the_excerpt(); ?></div>
-                                
-<!--                        <h5>-->
-<!--                          <em>-->
-<!--                            <span class="text-muted author">--><?php //_e('By', 'brainworks'); echo " "; the_author() ?><!--,</span>-->
-<!--                            <time  class="text-muted" datetime="--><?php //the_time('d-m-Y')?><!--">--><?php //echo get_option( 'date_format' ) ?><!--</time>-->
-<!--                          </em>-->
-<!--                        </h5>-->
-<!--                        <p class="text-muted">-->
-<!--                            <i class="fa fa-folder-open-o"></i>&nbsp; --><?php //_e('Category', 'brainworks'); ?><!--: --><?php //the_category(', ') ?><!--<br/>-->
-<!--                            <i class="fa fa-comment-o"></i>&nbsp; --><?php //_e('Comments', 'brainworks'); ?><!--: --><?php //comments_popup_link(__('None', 'brainworks'), '1', '%'); ?>
-<!--                        </p>-->
-                    
-<!--                            <div class="sp-xs-2"></div>-->
-<!--                            <a class="btn btn-secondary btn-sm"-->
-<!--                               href="--><?php //echo get_permalink(); ?><!--">--><?php //_e('Continue reading', 'brainworks') ?><!-- <i-->
-<!--                                        class="glyphicon glyphicon-arrow-right"></i></a>-->
                         </div>
                     </article>
-
-            <div class="sp-xs-6"></div>
+                    <div class="sp-xs-6"></div>
         <?php endwhile; ?>
     </div>
 
