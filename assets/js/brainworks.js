@@ -228,7 +228,8 @@
     var ajaxLoadMorePosts = function ajaxLoadMorePosts(selector, container) {
         var btn = $(selector);
         var storage = $(container);
-        console.log(storage);
+        var lastChildren;
+        lastChildren = $(container).children().last();
         if (!btn.length && !storage.length) return;
         var data, ajaxStart;
         data = {
@@ -238,6 +239,7 @@
         };
         btn.on("click", function() {
             if (ajaxStart) return;
+            lastChildren = $(container).children().last();
             ajaxStart = true;
             btn.addClass("is-loading");
             $.ajax({
@@ -249,6 +251,11 @@
                 var posts = response.data;
                 storage.append(response.data);
                 data.paged += 1;
+                if (posts !== "") {
+                    $("html, body").animate({
+                        scrollTop: $(lastChildren).offset().top
+                    }, 1e3);
+                }
                 ajaxStart = false;
                 btn.removeClass("is-loading");
                 if (posts === "") {

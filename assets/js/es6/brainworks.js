@@ -481,7 +481,8 @@
     const ajaxLoadMorePosts = (selector, container) => {
         const btn = $(selector);
         const storage = $(container);
-        console.log(storage);
+        let lastChildren;
+        lastChildren = $(container).children().last();
 
         if (!btn.length && !storage.length) return;
 
@@ -496,6 +497,8 @@
         btn.on('click', () => {
             if (ajaxStart) return;
 
+            lastChildren = $(container).children().last();
+
             ajaxStart = true;
 
             btn.addClass('is-loading');
@@ -508,9 +511,18 @@
             })
                 .done((response) => {
                     const posts = response.data;
+
                     storage.append(response.data);
 
                     data.paged += 1;
+
+                    if(posts !== '') {
+
+                        $('html, body').animate({
+                            scrollTop: $(lastChildren).offset().top
+                        }, 1000);
+
+                    }
 
                     ajaxStart = false;
 
